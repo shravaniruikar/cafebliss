@@ -1,0 +1,9 @@
+
+[
+    {"id": 1, "name": "Cappuccino", "price": 129, "category": "Coffee"},
+    {"id": 2, "name": "Iced Latte", "price": 149, "category": "Coffee"},
+    {"id": 3, "name": "Cold Coffee", "price": 119, "category": "Coffee"},
+    {"id": 4, "name": "Chocolate Brownie", "price": 99, "category": "Dessert"},
+    {"id": 5, "name": "Veg Sandwich", "price": 129, "category": "Food"},
+    {"id": 6, "name": "French Fries", "price": 89, "category": "Food"}
+]

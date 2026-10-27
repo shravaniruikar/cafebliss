@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2f211b">
+    <title>Cafe Bliss | Coffee, Comfort & Good Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#home" aria-label="Cafe Bliss home">
+            <span class="brand-mark" aria-hidden="true">cb</span>
+            <span>Cafe <em>Bliss</em><small>COFFEE · COMFORT · COMPANY</small></span>
+        </a>
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#menu">Our menu</a>
+            <a href="#cart">My cart <span class="cart-pill" id="cart-count">0</span></a>
+            <a href="#orders">Order history</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="eyebrow">YOUR NEIGHBOURHOOD COFFEE SPOT</span>
+            <h1>A little pause.<br><em>A lot of happy.</em></h1>
+            <p>Slow mornings, beautiful brews, and something delicious for every kind of day.</p>
+            <a href="#menu" class="btn">Find your favourite <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-note"><span>FRESHLY MADE</span><strong>with a little<br>extra love</strong></div>
+    </section>
+
+    <main>
+        <section id="menu" class="menu-section">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">MADE FOR YOUR MOMENT</span>
+                    <h2>Good things on the menu</h2>
+                </div>
+                <p>Freshly prepared, always worth the little treat.</p>
+            </div>
+            <div class="category-filters" role="group" aria-label="Filter menu by category">
+                <button class="filter-btn active" type="button" data-category="All" aria-pressed="true">All</button>
+                <button class="filter-btn" type="button" data-category="Coffee" aria-pressed="false">Coffee</button>
+                <button class="filter-btn" type="button" data-category="Food" aria-pressed="false">Food</button>
+                <button class="filter-btn" type="button" data-category="Desserts" aria-pressed="false">Desserts</button>
+            </div>
+            <div id="menu-items" class="menu-grid" aria-live="polite"></div>
+        </section>
+
+        <div class="order-layout">
+            <section id="cart" class="panel cart-panel">
+                <div class="panel-heading">
+                    <div><span class="eyebrow">JUST ONE MORE THING</span><h2>Your cart</h2></div>
+                    <span class="panel-icon" aria-hidden="true">♡</span>
+                </div>
+                <div id="cart-items" class="cart-items">Your cart is empty.</div>
+                <div class="cart-total"><span>Total</span><strong>₹<span id="total">0</span></strong></div>
+                <form id="checkout-form">
+                    <label class="field-label" for="customer-name">Your name</label>
+                    <input type="text" id="customer-name" placeholder="How should we call your order?" maxlength="80" autocomplete="name" required>
+                    <fieldset class="payment-options">
+                        <legend class="field-label">How would you like to pay?</legend>
+                        <label class="payment-option">
+                            <input type="radio" name="payment-method" value="Online" id="pay-online">
+                            <span><strong>Pay Online</strong><small>Secure checkout with Razorpay</small></span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment-method" value="Cash" id="pay-cash" checked>
+                            <span><strong>Cash at Counter</strong><small>Pay when you collect</small></span>
+                        </label>
+                        <p id="payment-note" class="payment-note" aria-live="polite"></p>
+                    </fieldset>
+                    <button id="place-order" class="btn checkout-btn" type="submit">Place your order</button>
+                    <p id="message" class="message" role="status" aria-live="polite"></p>
+                    <button id="retry-verification" class="retry-btn" type="button" hidden>Retry payment confirmation</button>
+                </form>
+            </section>
+
+            <section id="orders" class="panel history-panel">
+                <div class="panel-heading">
+                    <div><span class="eyebrow">SAVED WITH LOVE</span><h2>Order history</h2></div>
+                    <span class="panel-icon" aria-hidden="true">↗</span>
+                </div>
+                <div id="order-history">No orders yet.</div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <a class="footer-brand" href="#home">Cafe <em>Bliss</em></a>
+        <p>Good coffee. Good company. Always a little time for bliss.</p>
+        <span>© 2026 Cafe Bliss</span>
+    </footer>
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
